@@ -11,6 +11,7 @@ waiting_urls = []
 seen_urls = set()
 stopping = False
 
+sem = asyncio.Semaphore(1)
 
 async def fetch(url,session):
     #async with sem:
